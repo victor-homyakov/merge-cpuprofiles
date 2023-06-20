@@ -102,7 +102,7 @@ function mergeProfiles(p1, p2) {
     });
 
     p2.nodes.forEach(node => {
-        node.children = node.children.map(id => nodeMapping[id]);
+        node.children = node.children?.map(id => nodeMapping[id]) ?? [];
 
         if (node.id === 1) {
             // merge root entries
